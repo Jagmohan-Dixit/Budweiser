@@ -1,6 +1,4 @@
 const Author = require('../model/AuthorModel');
-// const jwt = require('jsonwebtoken');
-const authenticate = require("../middleware/authenticate");
 
 // connecting to database
 require('../db/conn');

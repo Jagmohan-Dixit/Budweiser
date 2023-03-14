@@ -1,6 +1,4 @@
 const Books = require('../model/BookModel');
-// const jwt = require('jsonwebtoken');
-const authenticate = require("../middleware/authenticate");
 
 // connecting to database
 require('../db/conn');
@@ -61,7 +59,7 @@ const UpdateBookbyID = async (req, res) => {
     }  
 }
 
-// Gettting All Authors From Database
+// Gettting All Books From Database
 
 const GetAllBooks = async (req, res) => {
     try {
@@ -73,8 +71,6 @@ const GetAllBooks = async (req, res) => {
         res.status(400).json(err);
     }   
 };
-
-// checking Author's Details by their Unique ID
 
 const BookLike = async (req, res) => {
     try{

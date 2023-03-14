@@ -6,8 +6,6 @@ const cookieparser = require("cookie-parser");
 require("dotenv").config();
 
 app.use(cookieparser());
-
-// it will understand the json data to our application
 app.use(express.json());
 
 // it will work for route's authentication

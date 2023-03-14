@@ -6,15 +6,20 @@ const mySchema = new mongoose.Schema({
         trim: true,
         required: true
     },
+
+    // You can change likes type to array of ObjectId for storing objectID of authors
+    // so that you can easily make relations for iterating in DB. For Postman testing purpose i use Number in it
+
     likes: {
         type : Number,
         default: 0,
+        // type:[mongoose.Types.ObjectId],
+        // ref:'Author',
     },
-    // likes: {
-    //     type:[mongoose.Types.ObjectId],
-    //     ref:'Author',
-    //     required:[true,'Please provide Author']
-    // },
+
+    // You can change author type to ObjectId for making relations in MongoDb for 
+    // Postman testing purpose i use string
+    
     author: {
         type: String
         // type: mongoose.Types.ObjectId,
