@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const Author = require('../model/AuthorModel')
+const User = require('../model/UserModel')
 
 const authenticate = async (req, res, next) => {
     try{ 
@@ -10,7 +10,7 @@ const authenticate = async (req, res, next) => {
         
         const verifytoken = jwt.verify(token, "JagguSecretKey");
 
-        const rootUser = await Author.findOne({_id:verifytoken._id, "tokens.token":token});
+        const rootUser = await User.findOne({_id:verifytoken._id, "tokens.token":token});
 
         if(!rootUser)
             return res.status(401).send("User Not Found");

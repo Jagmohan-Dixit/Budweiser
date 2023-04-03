@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const authenticate = require("../middleware/authenticate");
 
-const { GetAllAuthors, GetAuthorByID, GetCurrentAuthor, DeleteAuthorByID }  = require("../controllers/AuthorController");
+const { GetAllUsers, GetUserByID, GetCurrentUser, DeleteUserByID }  = require("../controllers/UserController");
 
-router.get('/authors', authenticate, GetAllAuthors);
-router.get('/authors/:id', authenticate, GetAuthorByID);
-router.post('/authors/me', authenticate, GetCurrentAuthor);
-router.delete('/authors/:id', authenticate, DeleteAuthorByID);
+router.get('/users', authenticate, GetAllUsers);
+router.get('/users/:id', authenticate, GetUserByID);
+router.post('/users/me', authenticate, GetCurrentUser);
+router.delete('/users/:id', authenticate, DeleteUserByID);
 
 module.exports = router;

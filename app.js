@@ -10,7 +10,7 @@ app.use(express.json());
 
 // it will work for route's authentication
 app.use(require('./router/userRoutes'));
-app.use(require('./router/authorRoutes'));
+// app.use(require('./router/authorRoutes'));
 app.use(require('./router/bookRoutes'));
 
 

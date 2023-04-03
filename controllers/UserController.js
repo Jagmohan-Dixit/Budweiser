@@ -1,39 +1,38 @@
-const Author = require('../model/AuthorModel');
+const User = require('../model/UserModel');
 
 // connecting to database
 require('../db/conn');
 
 
-// Posting Author's Data to Database using Register Route
+// Posting User's Data to Database using Register Route
 
-const RegisterAuthor = async (req, res) => {
-    const { name , email, phoneno, password, confirmpassword } = req.body;
+const RegisterUser = async (req, res) => {
+    const { name , email, password, confirmpassword } = req.body;
     console.log(req.body);
     
-    if(!name || !email || !phoneno || !password || !confirmpassword) {
+    if(!name || !email || !password || !confirmpassword) {
         return res.status(421).json({error : "Please Filled All the Fields"});
     }
     try {
-            const userExist = await Author.findOne({email : email});
-            const userExist1 = await Author.findOne({phoneno : phoneno});
+            const userExist = await User.findOne({email : email});
 
-            if(userExist || userExist1) {
+            if(userExist) {
                 return res.status(422).json({error : "User Already Exists"});
             } else if (password.length < 8){
                 return res.status(423).json({error : "Password should have min length of 8 characters"});
             } else if (password !== confirmpassword) {
                 return res.status(420).json({error : "Passwords are not Matching"});
             } else {
-                const user = new Author({name, phoneno, email, password, confirmpassword});
+                const user = new User({name, email, password, confirmpassword});
                 await user.save();
                 return res.status(201).json({message : "User Registered Successfully"});
             }
     } catch(err) { console.log(err); }
 };
 
-// checking Author's login details if they exist or not in database
+// checking User's login details if they exist or not in database
 
-const LoginAuthor = async (req, res) => {
+const LoginUser = async (req, res) => {
     try{
         const { email, password } = req.body; 
         
@@ -41,7 +40,7 @@ const LoginAuthor = async (req, res) => {
             return res.status(400).json({error : "Please Filled All the Fields"});
         }
 
-        const userlogin = await Author.findOne({email : email});
+        const userlogin = await User.findOne({email : email});
 
         if(userlogin) {
             const token = await userlogin.generateAuthToken(); 
@@ -52,7 +51,7 @@ const LoginAuthor = async (req, res) => {
             console.log(token);
             if(password === userlogin.password){
                 console.log("password match");
-                res.json({message : "User Login Successfully"}); 
+                res.json({message : "User Login Successfully", token: token}); 
             } else { 
                 res.status(402).json({error : "Wrong Password"});
             } 
@@ -64,9 +63,9 @@ const LoginAuthor = async (req, res) => {
     }
 };
 
-// Logout the Author 
+// Logout the User 
 
-const LogoutAuthor =  async (req, res) => {
+const LogoutUser =  async (req, res) => {
     console.log("Hello Logout");
     res.clearCookie('jwttoken', {path:'/'});
     res.status(200).send("User Logout Successfully");
@@ -74,4 +73,4 @@ const LogoutAuthor =  async (req, res) => {
 
 
 
-module.exports = { RegisterAuthor, LoginAuthor, LogoutAuthor};
+module.exports = { RegisterUser, LoginUser, LogoutUser};

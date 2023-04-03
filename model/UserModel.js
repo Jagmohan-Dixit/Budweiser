@@ -7,12 +7,6 @@ const mySchema = new mongoose.Schema({
         trim:true,
         required:true
     },
-    phoneno : {
-        type:Number,
-        maxlength: [13, "Phone Number length should not be greater than 13"],
-        minlength: [10, "Phone Number length should be greater than 9"],
-        required:true
-    },
     email : {
         type : String,
         maxlength : [30, "Email length should not be greater than 30"],
@@ -38,7 +32,7 @@ mySchema.methods.generateAuthToken = async function() {
     }
 }
 
-const Mydocuments = new mongoose.model("Author",mySchema);
+const Mydocuments = new mongoose.model("User",mySchema);
 
 module.exports = Mydocuments;
 

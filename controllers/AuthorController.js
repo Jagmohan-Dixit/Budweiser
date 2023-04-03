@@ -1,14 +1,14 @@
-const Author = require('../model/AuthorModel');
+const User = require('../model/UserModel');
 
 // connecting to database
 require('../db/conn');
 
 
-// Gettting All Authors From Database
+// Gettting All Users From Database
 
-const GetAllAuthors = async (req, res) => {
+const GetAllUsers = async (req, res) => {
     try {
-            const users = await Author.find();
+            const users = await User.find();
             console.log(users);
             return res.status(200).json(users);
     } catch(err) { 
@@ -17,12 +17,12 @@ const GetAllAuthors = async (req, res) => {
      }
 };
 
-// checking Author's Details by their Unique ID
+// checking User's Details by their Unique ID
 
-const GetAuthorByID = async (req, res) => {
+const GetUserByID = async (req, res) => {
     try{
         const { id } = req.params; 
-        const user = await Author.findOne({_id : id});
+        const user = await User.findOne({_id : id});
         res.status(200).json(user);
     } catch (err) {
         console.log(err);
@@ -30,10 +30,10 @@ const GetAuthorByID = async (req, res) => {
     }
 };
 
-const DeleteAuthorByID = async (req, res) => {
+const DeleteUserByID = async (req, res) => {
     try{
         const { id } = req.params; 
-        const user = await Author.deleteOne({_id : id});
+        const user = await User.deleteOne({_id : id});
         res.status(200).json(user);
     } catch (err) {
         console.log(err);
@@ -42,10 +42,10 @@ const DeleteAuthorByID = async (req, res) => {
 };
 
 
-const GetCurrentAuthor = async (req, res) => {
+const GetCurrentUser = async (req, res) => {
     try{
         const { id } = req.body;
-        const user = await Author.findOne({_id : id});
+        const user = await User.findOne({_id : id});
         res.status(200).json(user);
     } catch(err) { 
         console.log(err); 
@@ -53,4 +53,4 @@ const GetCurrentAuthor = async (req, res) => {
     }
 };
 
-module.exports = { GetAllAuthors, GetAuthorByID, GetCurrentAuthor,DeleteAuthorByID};
+module.exports = { GetAllUsers, GetUserByID, GetCurrentUser,DeleteUserByID};
