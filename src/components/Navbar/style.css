@@ -1,0 +1,21 @@
+.nav-link {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+    padding-inline: 2.5vw;
+}
+
+.navbar {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background: #6a11cb;
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+    background: linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+}
+
+.nav-link:hover {
+    background-color: aliceblue;
+    border-radius: 25px;
+}
