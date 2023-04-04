@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import { Visibility, VisibilityOff } from '@material-ui/icons';
+import Footer from '../../components/Navbar/Footer/Footer';
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -39,7 +40,7 @@ const Register = () => {
   },[])
 
   return (
-    <div>
+    <div className='loginBg'>
       <Navbar />
       {!token && <Grid className='login' container style={{display: "flex", justifyContent: "center"}}>
         <Grid item lg={8} md={10} sm={12} xs={12}>
@@ -62,9 +63,9 @@ const Register = () => {
                       className='inputBox' style={{marginBottom: "1vw"}}
                       onChange={(e) => setEmail(e.target.value)} />
                   <TextField label="Password" variant="standard" className='inputBox' 
-                      type={showPassword ? "text" : "password"} value={password}
+                      value={password}
                       onChange={(e) => setPassword(e.target.value)} />
-                  <Typography style={{display:"flex"}}>
+                  <Typography style={{display:"flex", marginTop: "12px"}} >
                     <TextField label="Confirm Password" variant="standard" className='inputBox' 
                       type={showPassword ? "text" : "password"} value={confirmpassword}
                       onChange={(e) => setConfirmpassword(e.target.value)} />
@@ -89,6 +90,7 @@ const Register = () => {
           </Grid>
         </Grid>
       </Grid> }
+      <Footer />
     </div>
   )
 }

@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import "./style.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {Grid, Drawer, Typography, Hidden, useTheme, useMediaQuery, List, ListItem, ListItemText, IconButton} from '@material-ui/core';
 import {Menu} from '@material-ui/icons';
+import logo from "../../Assets/logo.jpg";
 
 
 const Navbar = () => {
     const theme = useTheme();
+    const navigate = useNavigate();
     const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
     const [show, setShow] = useState(false);
     const [openDrawer, setOpenDrawer] = useState(false);
@@ -58,7 +60,13 @@ const Navbar = () => {
           </>
         :
         <Grid container className='navbar'>
-            <Grid item lg={6} md={7} sm={10} xs={12}>
+          <Grid item lg={6} md={6} sm ={2} onClick={() => navigate('/')}>
+            <img src={logo} alt='Logo' style={{width:"120px", height:"70px", cursor: "pointer"}} />
+          </Grid>
+            <Grid lg={6} md={6} sm={10}>
+            <Grid container>
+              <Grid item lg={2} md={2} sm={2} xs={0}></Grid>
+              <Grid item lg={10} md={10} sm={10} xs={12}>
                 <Typography style={{display:"flex", justifyContent:"space-around"}}>
                     <Link to='/' className='nav-link'>Home</Link>
                     <Link to='/register' className='nav-link'>About</Link>
@@ -66,6 +74,8 @@ const Navbar = () => {
                     {!token && <Link to='/login' className='nav-link'>Login</Link> }
                     {token && <Link to='/logout' className='nav-link'>Logout</Link>}
                 </Typography>
+            </Grid>
+            </Grid>
             </Grid>
         </Grid>
         }

@@ -1,8 +1,33 @@
 .record-display {
-  width: 100vw;
-  height: 100vh;
+    width: 98vw;
+    height: 100vh;
     top: 0;
     background-image: url('../../Assets/bg.jpg');
     background-size: cover;
     background-position: center center;
   }
+
+  .homebg {
+    padding : 40px;
+    width: 70vw;
+    height: 70vh;
+    background-image: url('../../Assets/family.png');
+    background-size: cover;
+    background-position: center center;
+    /* background-color: #652af0; */
+}
+
+.doctors {
+  width: 70vw;
+  height: 60vh;
+  background-image: url('../../Assets/doctors.avif');
+  background-size: cover;
+  background-position: center center;
+  padding: 30px;
+}
+
+.gradientText {
+    background: -webkit-linear-gradient(#652af0, #76cdef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

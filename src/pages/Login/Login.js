@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import { Link, useNavigate, } from 'react-router-dom';
 import axios from "axios";
 import { Visibility, VisibilityOff } from '@material-ui/icons';
+import Footer from '../../components/Navbar/Footer/Footer';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -35,7 +36,7 @@ const Login = () => {
   },[])
 
   return (
-    <div>
+    <div className='loginBg'>
       <Navbar />
       <Grid className='login' container style={{display: "flex", justifyContent: "center"}}>
         <Grid item lg={8} md={10} sm={12}>
@@ -79,6 +80,7 @@ const Login = () => {
           </Grid>
         </Grid>
       </Grid>
+      <Footer />
     </div>
   )
 }
