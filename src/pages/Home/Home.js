@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Home.css";
 import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Navbar/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import family from "../../Assets/family.avif";
 import { Button, Grid, Typography } from '@material-ui/core';
 import { Done } from '@material-ui/icons';
@@ -10,6 +10,9 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  console.log(token);
+  
+  
   return (
     <div>
       <div class="record-display">
@@ -42,13 +45,13 @@ const Home = () => {
           </Grid>
           <Grid item lg={7} md={7} sm={12} xs={12} style={{padding : "40px"}}>
             <Typography variant='h3' style={{fontWeight: "600"}}>
-              Our <span className='gradientText'>Secret</span> to great virtual care is great doctors
+              It’s the detail that makes the <span className='gradientText'>Difference</span>
             </Typography>
             <Typography variant='h6' style={{marginBlock: "15px"}}>
-               <Done color='primary' /> To learn more about COVID-19 and how Teladoc can help, explore the frequently asked questions
+               <Done color='primary' /> Combining exceptional knowledge and experience with the latest in ophthalmic technology, we provide complete eye care across multiple specialities
             </Typography>
             <Typography variant='h6'>
-              <Done color='primary' /> Before your first virtual care visit, set up your account online or on the app and then complete a brief medical history (it will help your doctor treat or advise you better)
+              <Done color='primary' /> Read more about our deep expertise in areas like cataract, refractive error correction with laser, glaucoma management, squint and others.
             </Typography>
           </Grid>
         </Grid>

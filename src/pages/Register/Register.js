@@ -5,10 +5,11 @@ import Navbar from '../../components/Navbar/Navbar';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import { Visibility, VisibilityOff } from '@material-ui/icons';
-import Footer from '../../components/Navbar/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 const Register = () => {
   const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
@@ -27,10 +28,19 @@ const Register = () => {
       password: password, 
       confirmpassword: confirmpassword
     }).then(function (response) {
-      console.log(response);
+      if(response.status === 200) {
+        setError("");
+        navigate('/login');
+      }
+      else {
+        console.log(response);
+        setError(response.message);
+        console.log(error);
+      }
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch(function (err) {
+      console.log(err.response.data.error);
+      setError(err.response.data.error);
     });
     
   }
@@ -55,6 +65,7 @@ const Register = () => {
                   <Typography className='btnParent' style={{padding: "10px 0",  fontSize: "1.4rem", fontWeight: "600"}}>
                     Sign Up
                   </Typography>
+                  {error && <Typography style={{paddingInline: "10px",color: "red"}}>{error}</Typography>}
                 <Typography style={{backgroundColor: "white", padding: "30px", borderRadius:"20px"}}>
                   <TextField label="Name" variant="standard" value={name}
                       className='inputBox' style={{marginBottom: "1vw"}}

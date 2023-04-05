@@ -7,14 +7,21 @@
     background-position: center center;
   }
 
-  .homebg {
+.homebg {
     padding : 40px;
     width: 70vw;
     height: 70vh;
     background-image: url('../../Assets/family.png');
     background-size: cover;
     background-position: center center;
-    /* background-color: #652af0; */
+}
+
+.aboutbg {
+  width: 70vw;
+  height: 70vh;
+  background-image: url('../../Assets/aboutDoctor.webp');
+  background-size: cover;
+  background-position: center center;
 }
 
 .doctors {
@@ -31,3 +38,4 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+

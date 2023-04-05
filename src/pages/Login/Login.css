@@ -15,6 +15,14 @@
     background-position: center center;
 }
 
+.contactBack {
+    width: 100%;
+    height: 500px;
+    /* background-image: url('../../Assets/doctor.jpg'); */
+    background-size: cover;
+    background-position: center center;
+}
+
 
 .inputBoxes {
     padding: 2.5vw;
@@ -41,3 +49,10 @@
 .login {
     padding: 50px;
 }
+
+/* @media (max-width: 850px) {
+    .contactBack {
+        width: 300px;
+        height: 200px;
+    }
+} */

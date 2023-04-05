@@ -6,10 +6,11 @@ import Navbar from '../../components/Navbar/Navbar';
 import { Link, useNavigate, } from 'react-router-dom';
 import axios from "axios";
 import { Visibility, VisibilityOff } from '@material-ui/icons';
-import Footer from '../../components/Navbar/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 const Login = () => {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -21,12 +22,15 @@ const Login = () => {
           email: email,
           password: password, 
         }).then(function (res) {
-          console.log(res);
+          console.log(res.data.error);
           localStorage.setItem("token", res.data.token);
+          localStorage.setItem("name", res.data.user.name);
+          localStorage.setItem("email", res.data.user.email);
           if(res.status === 200 ) navigate('/');
         })
-        .catch(function (error) {
-          console.log(error);
+        .catch(function (err) {
+          console.log(err.response.data.error);
+          setError(err.response.data.error);
         });
   }
 
@@ -48,9 +52,10 @@ const Login = () => {
             <Grid item lg={6} md={6} sm={6}>
               <Typography className='inputBoxes'>
                 <Typography style={{backgroundColor: "#B0E0E6", borderRadius:"20px"}}>
-                  <Typography className='btnParent' style={{padding: "10px 0",  fontSize: "1.4rem", fontWeight: "600"}}>
+                  <Typography className='btnParent' style={{padding: "10px",  fontSize: "1.4rem", fontWeight: "600"}}>
                     Sign In
                   </Typography>
+                  {error && <Typography style={{paddingInline: "10px",color: "red"}}>{error}</Typography>}
                 <Typography style={{backgroundColor: "white", padding: "30px", borderRadius:"20px"}}>
                   <TextField label="Email / Phone" variant="standard" value={email}
                       className='inputBox' style={{marginBottom: "1vw"}}
