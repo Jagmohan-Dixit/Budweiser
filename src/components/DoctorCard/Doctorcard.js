@@ -28,21 +28,21 @@ const Doctorcard = ({data, department}) => {
     console.log(data);
   return (
     <Grid item lg={3} md={4} sm={6} xs={10} className='main-card'>
-        <div style={{backgroundColor: "#B0C4DE", padding:"10px", borderRadius: "20px"}}>
+      <div style={{backgroundColor: "#B0C4DE", padding:"10px", borderRadius: "20px"}}>
         <div className='doctorCard'>
           <img src={data.imagesrc} style={{width: "240px", height: "220px", borderRadius: "10px"}}></img>
         </div>
         <div style={{marginTop: "20px"}}>
           <Typography className='doctorText'>{data.name}</Typography>
           <Typography className='doctorText'>{data.designation}</Typography>
-          <div className='doctorText'style={{marginBlock: "10px"}} >
+          <div className='doctorText' style={{marginBlock: "10px"}} >
             <Button variant='contained' color='primary'
                onClick={(e)=> handleAppointment(e)} >
                 Book Appointment
             </Button>
           </div>
         </div>
-        </div>
+      </div>
     </Grid>
   )
 }

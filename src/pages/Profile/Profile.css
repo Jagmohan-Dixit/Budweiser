@@ -1,0 +1,55 @@
+.profile-card:hover {
+    transition: all 0.8s ease-in-out;
+    transform: scale(1.04); 
+}
+
+.profile-image:hover {
+    transition: all 0.6s ease-in-out;
+    transform: scale(1.06); 
+}
+
+.profile-card {
+    background: #cc2b5e;  
+    background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  
+    background: linear-gradient(to right, #753a88, #cc2b5e); 
+}
+
+.social-icons {
+    color: white;
+    cursor:pointer;
+}
+
+.social-icons:hover {
+    color:yellow;
+    transition: all 0.4s ease-in-out;
+    transform: scale(1.7); 
+}
+
+.error {
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error h3 {
+    margin-bottom: 0.5rem;
+  }
+
+.error img {
+    max-width: 600px;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.error a {
+    color: var(--primary-500);
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+.error p{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--grey-500);
+}

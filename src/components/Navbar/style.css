@@ -6,13 +6,16 @@
     padding-block: 6px;
     border-radius: 24px;
 }
-
+.navbarnohome {
+    z-index: 1000;
+    padding: 5px;
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 .navbar {
     z-index: 1000;
     padding: 5px;
-    /* background: #6a11cb;
-    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
-    background: linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9)); */
 }
 
 .nav-link:hover {
@@ -27,3 +30,16 @@ background: -webkit-radial-gradient(45deg, #4273b8, #1259c4);
 background: -moz-radial-gradient(45deg, #4273b8, #1259c4);
 background: -o-radial-gradient(45deg, #4273b8, #1259c4);
 }
+
+
+.credits {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s ease;
+  }
+  
+  .credits:hover {
+    color: #00ffdd;
+  }
+  

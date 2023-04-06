@@ -6,6 +6,7 @@ import family from "../../Assets/family.avif";
 import { Button, Grid, Typography } from '@material-ui/core';
 import { Done } from '@material-ui/icons';
 import { useNavigate } from 'react-router-dom';
+import video from "../../Assets/bgvideo.mp4";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,9 +16,13 @@ const Home = () => {
   
   return (
     <div>
-      <div class="record-display">
-        <Navbar />
-        <Grid container>
+      <div style={{position:"fixed"}}>
+         <video autoPlay muted loop src={video} style={{width:"100%", height: "100%"}} />
+      </div>
+      <div style={{position: "absolute"}}>
+        <div>
+          <Navbar />  
+         <Grid>
           <Grid item lg={7} md={7} sm={12} xs={12} style={{padding : "40px"}}>
             <Typography variant='h3' style={{fontWeight: "600", color: "whitesmoke"}}>
               The <span className='gradientText'>Right</span> Care When You Need It Most
@@ -44,13 +49,13 @@ const Home = () => {
             </Grid>
           </Grid>
           <Grid item lg={7} md={7} sm={12} xs={12} style={{padding : "40px"}}>
-            <Typography variant='h3' style={{fontWeight: "600"}}>
+            <Typography variant='h3' style={{fontWeight: "600", color:"whitesmoke"}}>
               It’s the detail that makes the <span className='gradientText'>Difference</span>
             </Typography>
-            <Typography variant='h6' style={{marginBlock: "15px"}}>
+            <Typography variant='h6' style={{marginBlock: "15px", color:"whitesmoke"}}>
                <Done color='primary' /> Combining exceptional knowledge and experience with the latest in ophthalmic technology, we provide complete eye care across multiple specialities
             </Typography>
-            <Typography variant='h6'>
+            <Typography variant='h6' style={{color:"whitesmoke"}}>
               <Done color='primary' /> Read more about our deep expertise in areas like cataract, refractive error correction with laser, glaucoma management, squint and others.
             </Typography>
           </Grid>
@@ -60,13 +65,13 @@ const Home = () => {
       <div style={{marginBottom: "30px", paddingInline:"30px"}}>
         <Grid container >
           <Grid item lg={7} md={7} sm={12} xs={12} style={{padding : "40px"}}>
-            <Typography variant='h3' style={{fontWeight: "600"}}>
+            <Typography variant='h3' style={{fontWeight: "600", color:"whitesmoke"}}>
               Our <span className='gradientText'>Secret</span> to great virtual care is great doctors
             </Typography>
-            <Typography variant='h6' style={{marginBlock: "15px"}}>
+            <Typography variant='h6' style={{marginBlock: "15px", color:"whitesmoke"}}>
                <Done color='primary' /> To learn more about COVID-19 and how Teladoc can help, explore the frequently asked questions
             </Typography>
-            <Typography variant='h6'>
+            <Typography variant='h6' style={{color:"whitesmoke"}}>
               <Done color='primary' /> Before your first virtual care visit, set up your account online or on the app and then complete a brief medical history (it will help your doctor treat or advise you better)
             </Typography>
           </Grid>
@@ -78,7 +83,8 @@ const Home = () => {
       </div>
       <Footer />
     </div>
+    </div>
   )
 }
 
-export default Home
+export default Home;

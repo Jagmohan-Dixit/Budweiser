@@ -25,3 +25,15 @@
     transition: all 0.5s ease-in-out;
     transform: scale(1.03);
 }
+
+.doctorText:hover {
+    transition: all 0.4s ease-in-out;
+    transform: scale(1.03);
+}
+
+.doctorCard:hover {
+    transition: all 0.8s ease-in-out;
+    transform: scale(1.05);   
+    /* transform: scaleX(1.5); */
+    /* transform: skew(2deg); */
+}

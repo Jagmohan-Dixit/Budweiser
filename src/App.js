@@ -7,6 +7,7 @@ import Departments from './pages/Departments/Departments';
 import Appointments from './pages/MyAppointments/Appointments';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import Error from './pages/Error/Error';
 import Profile from './pages/Profile/Profile';
  
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/departments' Component={Departments} />
         <Route exact path='/login' Component={Login} />
         <Route exact path='/register' Component={Register} />
+        <Route exact path="*" Component={Error} /> 
       </Routes>
     </BrowserRouter>
   );

@@ -51,7 +51,7 @@ const Navbar = () => {
             </IconButton>
           </>
         :
-        <Grid container className='navbar' style={{backgroundColor: location === "/" ? "" : "#008080"}}>
+        <Grid container className={location === "/" || location === "/about" ? "navbar" : "navbar navbarnohome"}>
           <Grid item lg={4} md={6} sm ={2} onClick={() => navigate('/')}>
             <img src={logo} alt='Logo' style={{width:"120px", height:"70px", cursor: "pointer"}} />
           </Grid>

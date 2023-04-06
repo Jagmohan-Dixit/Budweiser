@@ -7,6 +7,7 @@ import { Link, useNavigate, } from 'react-router-dom';
 import axios from "axios";
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 import Footer from '../../components/Footer/Footer';
+import GoogleLogin from '../../components/GoogleLogin/GoogleLogin';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -56,7 +57,7 @@ const Login = () => {
                     Sign In
                   </Typography>
                   {error && <Typography style={{paddingInline: "10px",color: "red"}}>{error}</Typography>}
-                <Typography style={{backgroundColor: "white", padding: "30px", borderRadius:"20px"}}>
+                <Typography style={{backgroundColor: "#F3E7E7", padding: "30px", borderRadius:"20px"}}>
                   <TextField label="Email / Phone" variant="standard" value={email}
                       className='inputBox' style={{marginBottom: "1vw"}}
                       onChange={(e) => setEmail(e.target.value)} />
@@ -74,6 +75,9 @@ const Login = () => {
                       className='button' onClick={(e) => handleLogin(e)}>
                       Login
                     </Button>
+                  </Typography>
+                  <Typography className='btnParent' style={{marginTop: "3vw"}}>
+                    <GoogleLogin />
                   </Typography>
                   <Typography className='btnParent' style={{marginTop: "2vw"}}>
                     <Link to='/register' style={{textDecoration: "none", color:"red"}}>I don't have an Account ?</Link>

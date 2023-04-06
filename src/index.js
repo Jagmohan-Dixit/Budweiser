@@ -3,11 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MuiThemeProvider, createMuiTheme} from '@material-ui/core';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
+const THEME = createMuiTheme({
+  typography: {
+   "fontFamily": `Roboto`,
+   "fontSize": 14,
+   "fontWeightLight": 300,
+   "fontWeightRegular": 400,
+   "fontWeightMedium": 500
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <MuiThemeProvider theme={THEME}>
+      <GoogleOAuthProvider clientId="255961240003-dovvkshbtf04b0a740qdmnmhasud9hki.apps.googleusercontent.com">
+        <App />
+      </GoogleOAuthProvider>
+    </MuiThemeProvider>
   </React.StrictMode>
 );
 
