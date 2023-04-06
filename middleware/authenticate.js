@@ -3,7 +3,8 @@ const User = require('../model/UserModel')
 
 const authenticate = async (req, res, next) => {
     try{ 
-        const token = req.headers.authorization.split(' ')[1];
+        console.log(req.headers.cookie);
+        const token = req?.headers?.cookie?.split('=')[1];
        
         if(!token)
             console.log("token not found", token); 

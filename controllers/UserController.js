@@ -25,7 +25,7 @@ const RegisterUser = async (req, res) => {
             } else {
                 const user = new User({name, email, password, confirmpassword});
                 await user.save();
-                return res.status(201).json({message : "User Registered Successfully"});
+                return res.status(200).json({message : "User Registered Successfully"});
             }
     } catch(err) { console.log(err); }
 };
@@ -51,7 +51,7 @@ const LoginUser = async (req, res) => {
             console.log(token);
             if(password === userlogin.password){
                 console.log("password match");
-                res.json({message : "User Login Successfully", token: token}); 
+                res.status(200).json({message : "User Login Successfully", token: token, user: userlogin}); 
             } else { 
                 res.status(402).json({error : "Wrong Password"});
             } 
