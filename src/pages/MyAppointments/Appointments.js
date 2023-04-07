@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Appointments = () => {
     const [currentdata, setCurrentdata] = useState();
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     const [query, setQuery] = useState();
     const name = localStorage.getItem('name');
     const navigate = useNavigate();
@@ -17,6 +17,7 @@ const Appointments = () => {
         .then(function (response) {
             console.log(response);
             setData(response.data);
+            setCurrentdata(response.data);
         }).catch(function(err) {
             console.log(err);
         });
@@ -43,12 +44,11 @@ const Appointments = () => {
         e.preventDefault();
         setQuery(e.target.value);
         console.log(query);
-        if(query == "") {
-            return setData(currentdata);
-        }
-        var arr = data?.filter((val) =>
-            val?.doctor.startsWith(query)
-        )
+        const arr = currentdata?.filter(post => {
+         if (e.target.value === "") return post;
+            console.log(post);
+            return post?.doctor?.toLowerCase().includes(e.target.value.toLowerCase())
+        })
         console.log(arr);
         setData(arr);
     }
@@ -60,10 +60,11 @@ const Appointments = () => {
     },[])
 
   return (
-    <div>
+    <div className='appointment'>
         <Navbar />
+        <div >
         <div style={{display:"flex", justifyContent:"center", marginTop: "20px"}}>
-            <h1 className='gradientText'>Your Appointments</h1>
+            <h1 className='appointment-heading'>Your Appointments</h1>
           </div>
         <div style={{padding: "30px"}}>
             <div>
@@ -98,8 +99,12 @@ const Appointments = () => {
         </TableBody>
         </Table>
         </TableContainer>
+        {!data.length && <div style={{display:"flex", padding:"20px", justifyContent:"center",alignItems:"center"}}>
+            <h2>No Doctor name contains <span style={{color:"red"}}>{query}</span></h2>
+            </div>}
         </div>
         <Footer />
+        </div>
     </div>
   )
 }

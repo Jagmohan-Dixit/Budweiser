@@ -19,7 +19,7 @@ const Profile = () => {
      {token && <div style={{display: "flex", justifyContent: "center", padding: "30px" }}>
         <Grid item lg={5} md={5} sm={7} xs={10}  className="profile-card" style={{ padding: "20px", borderRadius: "25px"}}>
             <div style={{display: "flex", justifyContent: "center", marginBottom: "20px"}}>
-              <h1 style={{color:"white"}}>User Profile</h1>
+              <h1 style={{color:"white", textShadow: "3px 3px 4px #000000"}}>User Profile</h1>
             </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <img className="border border-primary border-3 rounded-circle profile-image" src={picture ? picture : profile} width="200px" height="200px" />

@@ -19,10 +19,10 @@ const Departments = () => {
   return (
     <div>
       <Navbar />
-      <div style={{padding: "30px"}}>
+      <div style={{padding: "30px",}} className='department'>
       <div>
           <div style={{display:"flex", justifyContent:"center", marginBlock: "20px"}}>
-            <h1 >Surgical Department</h1>
+            <h1 className='gradientText'>Surgical Department</h1>
           </div>
            <Grid container spacing={5} style={{display:"flex", justifyContent:"center"}}>
             {Doctorsdata[0].SurgicalDepartment.map((item) => {
@@ -33,9 +33,9 @@ const Departments = () => {
           </Grid>
         </div>
 
-        <div style={{marginTop: "40px"}}>
+        <div style={{marginTop: "70px"}}>
           <div style={{display:"flex", justifyContent:"center", marginBlock: "20px"}}>
-            <h1 >Cardiology Department</h1>
+            <h1 className='gradientText'>Cardiology Department</h1>
           </div>
            <Grid container spacing={5} style={{display:"flex", justifyContent:"center"}}>
             {Doctorsdata[0].CardiologyDepartment.map((item) => {
@@ -46,9 +46,9 @@ const Departments = () => {
           </Grid>
         </div>
 
-        <div style={{marginTop: "40px"}}>
+        <div style={{marginTop: "70px"}}>
           <div style={{display:"flex", justifyContent:"center", marginBlock: "20px"}}>
-            <h1 >Neurology Department</h1>
+            <h1 className='gradientText'>Neurology Department</h1>
           </div>
            <Grid container spacing={5} style={{display:"flex", justifyContent:"center"}}>
             {Doctorsdata[0].NeurologyDepartment.map((item) => {
@@ -59,9 +59,9 @@ const Departments = () => {
           </Grid>
         </div>
 
-        <div style={{marginTop: "40px"}}>
+        <div style={{marginTop: "70px"}}>
           <div style={{display:"flex", justifyContent:"center", marginBlock: "20px"}}>
-            <h1 >Gynecology Department</h1>
+            <h1 className='gradientText'>Gynecology Department</h1>
           </div>
            <Grid container spacing={5} style={{display:"flex", justifyContent:"center"}}>
             {Doctorsdata[0].GynecologyDepartment.map((item) => {

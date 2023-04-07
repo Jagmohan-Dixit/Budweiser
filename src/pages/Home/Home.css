@@ -39,3 +39,9 @@
     -webkit-text-fill-color: transparent;
 }
 
+.department {
+  background: linear-gradient(109.6deg, rgb(43, 1, 91) 13.4%,rgb(122, 2, 54) 100.2%);
+  /* background: -webkit-linear-gradient(#652af0, #76cdef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}

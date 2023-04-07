@@ -12,7 +12,7 @@ const Contact = () => {
     <div className='' style={{alignItems: "center"}}>
       <img src={doctors} width='100%' height='400px' />
       <div style={{position:"absolute",top: "50%", left: "50%",transform: "translate(-50%, -50%)"}}>
-        <h1 style={{color:"black", fontSize: "3.5rem"}}>Contact Us</h1>
+        <h1 style={{color:"black", fontSize: "3.5rem", textShadow: "2px 2px 4px #f2f3f3"}}>Contact Us</h1>
       </div>
     </div>
     <div style={{marginBottom: "30px", padding:"30px"}}>

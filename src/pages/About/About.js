@@ -16,9 +16,9 @@ const About = () => {
         </div> */}
 
         <div style={{marginBottom: "30px", padding:"30px"}}>
-          <div className='btnParent' style={{marginBottom: "30px"}}>
+          {/* <div className='btnParent' style={{marginBottom: "30px"}}>
             <h1 style={{color:"white", fontSize: "3.5rem"}}>About</h1>
-          </div>
+          </div> */}
         <Grid container>
           <Grid style={{display:"flex", justifyContent:"center"}} container item lg={5} md={5} sm={12} xs={12}>
             <Grid className='' item lg={12} md={12} sm={10} xs={10}>
