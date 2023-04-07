@@ -41,9 +41,11 @@ const LoginUser = async (req, res) => {
         }
 
         const userlogin = await User.findOne({email : email});
+        console.log(userlogin)
 
         if(userlogin) {
-            const token = await userlogin.generateAuthToken(); 
+            const token = await userlogin.generateAuthToken();
+            console.log(token);
             res.cookie("jwttoken", token, {  
                 expires:new Date(Date.now() + 25892000000), 
                 httpOnly:true 
@@ -51,7 +53,7 @@ const LoginUser = async (req, res) => {
             console.log(token);
             if(password === userlogin.password){
                 console.log("password match");
-                res.status(200).json({message : "User Login Successfully", token: token, user: userlogin}); 
+                res.status(200).json({token ,message : "User Login Successfully", user: userlogin}); 
             } else { 
                 res.status(402).json({error : "Wrong Password"});
             } 

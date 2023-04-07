@@ -79,4 +79,15 @@ const GetAllAppointment = async (req, res) => {
     }   
 };
 
-module.exports = { GetAppointmentbyID, DeleteAppointmentbyID, UpdateAppointmentbyID, CreateAppointment, GetAllAppointment};
+const AllAppointment = async (req, res) => {
+    try {
+        const allAppointment = await Appointment.find();
+        console.log(allAppointment);
+        return res.status(200).json(allAppointment);
+    } catch(err) { 
+        console.log(err);
+        res.status(400).json(err);
+    }   
+};
+
+module.exports = { GetAppointmentbyID, DeleteAppointmentbyID, UpdateAppointmentbyID, CreateAppointment, GetAllAppointment, AllAppointment};

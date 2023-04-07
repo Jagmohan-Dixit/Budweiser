@@ -25,7 +25,9 @@ const mySchema = new mongoose.Schema({
 
 mySchema.methods.generateAuthToken = async function() {
     try {
-        let token = jwt.sign({_id:this._id}, "JagguSecretKey");
+        let token = jwt.sign({_id:this._id}, "JagguSecretKey", {
+            expiresIn: '24h'
+        });
         return token;
     } catch (err) {
         console.log(err);
