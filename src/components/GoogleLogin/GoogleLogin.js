@@ -12,7 +12,6 @@ const GoogleLogin = () => {
 
     const login = useGoogleLogin({
         onSuccess: (codeResponse) => {
-            console.log(codeResponse.access_token);
             localStorage.setItem("token", codeResponse.access_token);
             setUser(codeResponse);
         },
@@ -29,7 +28,6 @@ const GoogleLogin = () => {
                         }
                     })
                     .then((res) => {
-                        console.log(res);
                         setProfile(res.data);
                         localStorage.setItem("name", res.data.name);
                         localStorage.setItem("email", res.data.email);

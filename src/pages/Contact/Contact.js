@@ -27,27 +27,27 @@ const Contact = () => {
             Welcome to <span className='gradientText'>Asphalt Hospital</span>
           </Typography>
           <Typography variant='h6' style={{marginBlock: "15px"}}>
-            <Done color='primary' /> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+            <Done color='primary' /> Thank you for your interest in Asphalt Hospital. We welcome any questions or feedback you may have and are committed to providing prompt and courteous service.
           </Typography>
           <Typography variant='h6'>
-            <Done color='primary' />Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+            <Done color='primary' />Asphalt Hospital is open 24 hours a day, seven days a week. Please note that some departments, such as the billing department, may have different hours of operation
           </Typography>
           <Typography variant='h6' style={{marginBlock: "15px"}}>
-            <Done color='primary' />A small river named Duden flows by their place and supplies it with the necessary regelialia.
+            <Done color='primary' />For specific department doctors, please visit our Department page.
           </Typography>
         </Typography>
         <Typography style={{display: "flex", justifyContent: "space-between"}}>
         <Typography className='border border-2 rounded-2 border-primary p-3'>
-          <Typography className='btnParent'>3000</Typography>
-          <Typography className='btnParent'>Happy Customers</Typography>
+          <Typography className='btnParent'>Email</Typography>
+          <Typography className='btnParent'>info@asphalt.com</Typography>
         </Typography>
         <Typography className='border border-2 rounded-2  border-primary p-3'>
-          <Typography className='btnParent'>2200</Typography>
-          <Typography className='btnParent'>Performed Treatment</Typography>
+          <Typography className='btnParent'>Contact</Typography>
+          <Typography className='btnParent'>+91 9964836623 </Typography>
         </Typography>
         <Typography className='border border-2 rounded-2  border-primary p-3'>
-          <Typography className='btnParent'>8</Typography>
-          <Typography className='btnParent'>Years of Experience</Typography>
+          <Typography className='btnParent'>Address</Typography>
+          <Typography className='btnParent'>123 Main Street, Anytown</Typography>
         </Typography>
         </Typography>
       </Grid>
@@ -60,3 +60,12 @@ const Contact = () => {
 }
 
 export default Contact
+
+
+// Contact Information:
+
+// Main Phone Number: 555-1234
+// Emergency Department: 555-5678
+// Billing Department: 555-9012
+//  Address: 
+// Physical Address: 

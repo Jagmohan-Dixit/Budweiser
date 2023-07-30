@@ -11,7 +11,6 @@ import video from "../../Assets/bgvideo.mp4";
 const Home = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
-  console.log(token);
   
   
   return (
@@ -28,7 +27,7 @@ const Home = () => {
               The <span className='gradientText'>Right</span> Care When You Need It Most
             </Typography>
             <Typography variant='h6' style={{marginBlock: "25px", color: "white"}}>
-              Talk to a doctor, therapist or medical expert anywhere you are by phone or video.
+            Compassionate care for a healthier tomorrow.
             </Typography>
             {!token && <Grid item lg={6} md={5} sm={5} xs={8}>
               <Button variant='contained' color='primary' onClick={() => navigate('/login')}
@@ -69,10 +68,10 @@ const Home = () => {
               Our <span className='gradientText'>Secret</span> to great virtual care is great doctors
             </Typography>
             <Typography variant='h6' style={{marginBlock: "15px", color:"whitesmoke"}}>
-               <Done color='primary' /> To learn more about COVID-19 and how Teladoc can help, explore the frequently asked questions
+               <Done color='primary' /> Our patients inspire us every day, and we are proud to share their stories of hope, healing, and recovery
             </Typography>
             <Typography variant='h6' style={{color:"whitesmoke"}}>
-              <Done color='primary' /> Before your first virtual care visit, set up your account online or on the app and then complete a brief medical history (it will help your doctor treat or advise you better)
+              <Done color='primary' /> Most recently, we were recognized with the "Top Performer on Key Quality Measures" award from the Joint Commissioner
             </Typography>
           </Grid>
             <Grid style={{display:"flex", justifyContent:"center"}} container item lg={5} md={5} sm={12} xs={12}>

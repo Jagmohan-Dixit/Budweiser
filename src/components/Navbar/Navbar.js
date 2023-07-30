@@ -60,23 +60,23 @@ const Navbar = () => {
               <Grid item lg={2} md={2} sm={2} xs={0}></Grid>
               <Grid item lg={10} md={10} sm={10} xs={12}>
                 <Typography style={{display:"flex", justifyContent:"space-between"}}>
-                    <Link to='/' className='nav-link'>Home</Link>
-                    <Link to='/about' className='nav-link'>About</Link>
-                    <Link to='/contact' className='nav-link'>Contact</Link>
+                    <Link to='/' className={location === "/" || location === "/about" ? 'nav-link' : 'nav-link text-dark'}>Home</Link>
+                    <Link to='/about' className={location === "/" || location === "/about" ? 'nav-link' : 'nav-link text-dark'}>About</Link>
+                    <Link to='/contact' className={location === "/" || location === "/about" ? 'nav-link' : 'nav-link text-dark'}>Contact</Link>
                     {!token && <> 
-                      <Link to='/register' className='nav-link'>Register</Link>
-                      <Link to='/login' className='nav-link'>Login</Link> 
+                      <Link to='/register' className={location === "/" || location === "/about" ? 'nav-link' : 'nav-link text-dark'}>Register</Link>
+                      <Link to='/login' className={location === "/" || location === "/about" ? 'nav-link' : 'nav-link text-dark'}>Login</Link> 
                     </> }
                     {token && <>
-                      <Link to='/departments' className='nav-link'>Departments</Link>
-                      <Link to='/appointments' className='nav-link'>Appointments</Link>
-                      <Button style={{color: "#A9A9A9",textTransform: "none", fontWeight:"400"}} onClick={() => {
-                        console.log("Logout")
+                      <Link to='/departments' className={location === "/" || location === "/about" ? 'nav-link' : 'nav-link text-dark'}>Departments</Link>
+                      <Link to='/appointments' className={location === "/" || location === "/about" ? 'nav-link' : 'nav-link text-dark'}>Appointments</Link>
+                      <Button style={{color: "#A9A9A9",textTransform: "none", fontWeight:"400",}}
+                        className={location === "/" || location === "/about" ? 'nav-link' : 'text-dark nav-link'}                       onClick={() => {
                         localStorage.removeItem('token');
                         localStorage.removeItem('name');
                         localStorage.removeItem('email');
                         navigate('/');
-                      }} className='nav-link'>Logout</Button>
+                      }}>Logout</Button>
                       </>}
                 </Typography>
             </Grid>

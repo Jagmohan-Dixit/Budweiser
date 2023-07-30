@@ -10,13 +10,20 @@ const Doctorcard = ({data, department}) => {
 
         const name = localStorage.getItem('name');
         const email = localStorage.getItem('email');
-        console.log(name);
+        const token = localStorage.getItem('token');
+        const datas = {
+          "name": name, "email": email, "phoneno" : "",
+          "department": department, "doctor": data.name,
+        }
 
-        const res = await axios.post("/appointment/new", {
-            name: name, email: email, phoneno : "",
-            department: department, doctor: data.name,
+        const res = await axios.post("https://asphaltapi1.onrender.com/appointment/new" , {
+          name: name, email: email, phoneno : "",
+          department: department, doctor: data.name,
+        },{
+            headers: {
+              'Authorization': token
+            }
           }).then(function (res) {
-            console.log(res?.data?.data);
             if(res.status === 200) alert("Your Appointment accepted")
             else if(res.status === 201) alert(res?.data?.msg+" with id : "+res?.data?.data[0]?._id)
           })
@@ -25,7 +32,6 @@ const Doctorcard = ({data, department}) => {
           });
 
     }
-    console.log(data);
   return (
     <Grid item lg={3} md={4} sm={6} xs={10} className='main-card'>
       <div style={{backgroundColor: "#963940", padding:"10px", borderRadius: "20px"}}>

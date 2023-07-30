@@ -9,7 +9,7 @@ const Footer = () => {
             <div class="row gy-4 gx-5">
                 <div class="col-lg-5 col-md-4 col-sm-8">
                     <h5 class="h1 text-white">Asphalt</h5>
-                    <p class="small text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <h3 class="h5 text-white">Compassionate care for a healthier tomorrow.</h3>
                     <p class="small text-white mb-0">&copy; Copyrights. All rights reserved @Asphalt</p>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-4">
@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-10">
                     <h5 class="text-white mb-3">Newsletter</h5>
-                    <p class="small text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <p class="small text-white">A hospital newsletter provides updates on news, events, and healthcare developments to keep the community informed and promote hospital initiatives.</p>
                     <form action="#">
                         <div class="input-group mb-3">
                             <input class="form-control" type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" />

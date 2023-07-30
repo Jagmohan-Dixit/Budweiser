@@ -18,19 +18,16 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(email+" "+password);
-    const res = await axios.post("/login", {
+    const res = await axios.post("https://asphaltapi1.onrender.com/login", {
           email: email,
           password: password, 
         }).then(function (res) {
-          console.log(res.data.error);
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("name", res.data.user.name);
           localStorage.setItem("email", res.data.user.email);
           if(res.status === 200 ) navigate('/');
         })
         .catch(function (err) {
-          console.log(err.response.data.error);
           setError(err.response.data.error);
         });
   }

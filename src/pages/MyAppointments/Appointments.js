@@ -10,12 +10,16 @@ const Appointments = () => {
     const [data, setData] = useState([]);
     const [query, setQuery] = useState();
     const name = localStorage.getItem('name');
+    const token = localStorage.getItem('token');
     const navigate = useNavigate();
-
+    
     const getData = async () => {
-        const res = await axios.get(`/appointments/${name}`)
+        const res = await axios.get(`https://asphaltapi1.onrender.com/appointments/${name}`,{
+            headers : {
+                'Authorization': token
+            }
+        })
         .then(function (response) {
-            console.log(response);
             setData(response.data);
             setCurrentdata(response.data);
         }).catch(function(err) {
@@ -25,9 +29,12 @@ const Appointments = () => {
 
     const handleDelete = async (e, id) => {
         e.preventDefault();
-        const res = await axios.delete(`/appointment/${id}`)
+        const res = await axios.delete(`https://asphaltapi1.onrender.com/appointment/${id}`, {
+            headers: {
+              'Authorization': token
+            }
+          })
         .then(function (response) {
-            console.log(response);
             var arr = data;
             arr = arr.filter(function (val) {
                 return val._id != id;
@@ -37,19 +44,15 @@ const Appointments = () => {
         }).catch(function (err) {
             console.log(err);
         })
-        console.log(res);
     }
 
     const handleQuery = (e) => {
         e.preventDefault();
         setQuery(e.target.value);
-        console.log(query);
         const arr = currentdata?.filter(post => {
          if (e.target.value === "") return post;
-            console.log(post);
             return post?.doctor?.toLowerCase().includes(e.target.value.toLowerCase())
         })
-        console.log(arr);
         setData(arr);
     }
 

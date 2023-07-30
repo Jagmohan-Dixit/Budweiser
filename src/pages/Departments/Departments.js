@@ -8,7 +8,6 @@ import {Doctorsdata} from "../../Data/Doctorsdata";
 import { useNavigate } from 'react-router-dom';
 
 const Departments = () => {
-  console.log(Doctorsdata[0]);
   const navigate = useNavigate();
 
   useEffect(() => {

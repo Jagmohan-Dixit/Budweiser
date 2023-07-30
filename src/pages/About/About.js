@@ -30,13 +30,16 @@ const About = () => {
                 Welcome to <span className='gradientText'>Asphalt Hospital</span>
               </Typography>
               <Typography variant='h6' style={{marginBlock: "15px", color:"#F4F3C0"}}>
-                <Done style={{color:'#FC3939'}} /> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-              </Typography>
-              <Typography variant='h6' style={{color:"#F4F3C0"}}>
-                <Done style={{color:'#FC3939'}} />Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                <Done style={{color:'#FC3939'}} /> Asphalt Hospital has grown and expanded over the years to better serve the community.
               </Typography>
               <Typography variant='h6' style={{marginBlock: "15px", color:"#F4F3C0"}}>
-                <Done style={{color:'#FC3939'}} />A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                <Done style={{color:'#FC3939'}} />Our patient satisfaction scores rank above the national average and we excel in infection prevention and readmission rates.
+              </Typography>
+              <Typography variant='h6' style={{marginBlock: "15px", color:"#F4F3C0"}}>
+                <Done style={{color:'#FC3939'}} />We offer outreach programs and partnerships with local organizations to support the health and well-being of the community.
+              </Typography>
+              <Typography variant='h6' style={{marginBlock: "15px", color:"#F4F3C0"}}>
+                <Done style={{color:'#FC3939'}} />We are involved in clinical trials and research initiatives to advance healthcare.
               </Typography>
             </Typography>
             <Typography style={{display: "flex", justifyContent: "space-between"}}>

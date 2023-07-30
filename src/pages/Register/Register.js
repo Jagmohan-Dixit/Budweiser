@@ -19,10 +19,8 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    console.log("Handle Register")
-    console.log(name+" "+email+" "+password);
 
-    const res = await axios.post("/register", {
+    const res = await axios.post("https://asphaltapi1.onrender.com/register", {
       name: name,
       email: email,
       password: password, 
@@ -33,13 +31,10 @@ const Register = () => {
         navigate('/login');
       }
       else {
-        console.log(response);
         setError(response.message);
-        console.log(error);
       }
     })
     .catch(function (err) {
-      console.log(err.response.data.error);
       setError(err.response.data.error);
     });
     
